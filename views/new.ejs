@@ -1,0 +1,36 @@
+<% include layouts/header %>
+
+<div class="ui text main container segment">
+  <div class="ui huge header">New Blog</div>
+  <form class="ui form" action="/blogs" method="POST">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="blog[title]" placeholder="title"> 
+    </div> 
+    <div class="field">
+      <label>Image</label>
+      <input type="text" name="blog[image]" placeholder="image"> 
+    </div> 
+    <div class="field">
+      <label>Content</label>
+      <textarea name="blog[body]"></textarea>
+    </div> 
+   
+      <input id="newbutton" class="ui black big basic button" type="submit">
+  </form>
+  
+</div>
+<script>
+    var container = document.querySelector('#newbutton');
+
+  container.addEventListener('mouseenter', function(){
+          this.classList.remove('basic');
+          this.classList.add('inverted');
+  })
+  container.addEventListener('mouseleave', function(){
+          this.classList.add('basic');
+          this.classList.remove('inverted');
+  })
+</script>
+<% include layouts/footer %>
+
